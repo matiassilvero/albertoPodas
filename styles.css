@@ -1,0 +1,338 @@
+/* -------------------
+   RESET Y BASE
+------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores principales */
+    --musgo: #3C6E47;
+    --verde-oscuro: #2E583A; /* Header, botones principales */
+    --verde-medio: #5A8F64; /* Hover, acentos */
+    --beige: #F5F0E6; /* Fondos claros */
+    --marron-terroso: #6B4E3B; /* Bordes, detalles */
+    --blanco-roto: #FFFDFA; /* Fondos puros */
+    --negro: #000000; /* Negro intenso para texto */
+    --negro-oscuro: #111111; /* Casi negro, menos agresivo que #000000 */
+
+    /* Colores funcionales */
+    --error: #b32121; /* Rojo para errores */
+    --whatsapp: #25D366; /* Verde WhatsApp */
+    --negro-suave: #333333; /* Texto principal oscuro */
+
+    /* Colores de contraste y acento */
+    --amarillo-mostaza: #FFC857; /* Botones, detalles */
+    --naranja-suave: #FF9F80; /* Hover o elementos destacados */
+    --rosa-pale: #FADBD8; /* Detalles suaves, overlays */
+    --blanco-puro: #FFFFFF; /* Contraste máximo */
+
+    --shadow-card: 0 10px 20px rgba(0,0,0,0.1);
+    --shadow-hover: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--musgo);
+    color: var(--negro-suave);
+}
+
+html {
+    scroll-padding-top: 80px; /* ajusta según el alto de tu navbar */
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+body {
+    margin: 0; /* elimina márgenes por defecto */
+    padding-top: 0; /* o un valor muy pequeño como 5px si querés un poquito de espacio */
+}
+
+/* -------------------
+   NAVBAR
+------------------- */
+.navbar {
+    background-color: var(--verde-oscuro) !important;
+    border-bottom: 2px solid var(--marron-terroso);
+}
+
+/* Links en blanco puro */
+.navbar .nav-link {
+    color: #FFFFFF !important; /* blanco puro */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--verde-medio) !important;
+}
+
+/* -------------------
+   BOTON MODERNO DE WHATSAPP
+------------------- */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--whatsapp);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* círculo perfecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+    .whatsapp-float img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .whatsapp-float:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+
+/* -------------------
+   SECCIONES ESPECÍFICAS (con .)
+------------------- */
+
+.body-padding {
+    padding-top: 90px; /* Ajusto segun altura de mi Nav */
+}
+
+.text-verde {
+    color: var(--verde-oscuro);
+}
+
+.bg-verde {
+    background-color: var(--verde-oscuro) !important;
+}
+
+.bg-beige {
+    background-color: var(--beige) !important;
+}
+/* Texto claro sobre fondos oscuros */
+.bg-verde, .navbar {
+    color: var(--blanco-roto);
+}
+
+/* -------------------
+   SECCIONES ESPECÍFICAS (con ID)
+------------------- */
+
+#Inicio h1 {
+    font-size: 2rem; /* Título principal más pequeño */
+    font-weight: 700;
+}
+
+#Inicio h3, #Inicio p {
+    font-size: 1rem; /* Subtítulos y párrafos más pequeños */
+}
+
+#Inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* ocupa todo #Inicio */
+    background-color: rgba(46, 88, 58, 0.7); /* overlay verde */
+    z-index: 0;
+}
+#Inicio > * {
+    position: relative;
+    z-index: 1;
+}
+
+#Inicio {
+    position: relative; /* importante para que el ::before se limite solo a esta sección */
+    text-align: center;
+    font-size: 0.9rem; /* Ajusta a tu gusto, 1rem es el tamaño base */
+    margin-top: -40px; /* ajustá hasta que desaparezca el espacio */
+    min-height: 80vh; /* altura mínima */
+    display: flex; /* flexbox para centrar contenido */
+    flex-direction: column; /* columnas verticales */
+    justify-content: center; /* centra verticalmente */
+    align-items: center; /* centra horizontalmente */
+    text-align: center; /* centra texto */
+    color: var(--blanco-puro); /* texto blanco */
+    padding: 2rem; /* espacio interno */
+    /* Imagen de fondo con overlay */
+    background: url('Imagenes/22.jpeg') no-repeat center center;
+    background-size: cover; /* cubre toda la sección */
+}
+
+
+#ServiciosyCobertura {
+    scroll-margin-top: 80px; /* ajusta según la altura de tu navbar */
+    background-color: var(--musgo); /* verde musgo */
+    padding: 2rem; /* opcional, para que no queden pegadas las cards */
+}
+
+#Trabajos {
+    scroll-margin-top: 10px; /* ajusta según la altura de tu navbar */
+    text-align: center;
+    background-color: var(--musgo);
+    color: var(--blanco-puro);
+}
+
+#TextoCarrousel {
+    text-align: center;
+    max-width: 600px;
+    margin: 0.5rem; /* equivale a m-2 de Bootstrap */
+    width: 100%;
+    color: var(--blanco-puro);
+}
+
+#TextoLibre {
+    text-align: center;
+    background-color: var(--musgo);
+    width: 100%;
+    color: var(--blanco-puro); /*  para que el texto contraste */
+    padding: 3rem 0; /* opcional, para espacio vertical*/
+}
+
+#NosotrosyContacto{
+    scroll-margin-top: 980px; /* ajusta según la altura de tu navbar */
+}
+
+
+/* -------------------
+   IMAGENES, VIDEOS Y CARDS
+------------------- */
+
+#CarouselPodas {
+    width: 100%; /* reemplaza w-100 */
+    margin: 0.5rem; /* reemplaza m-2 */
+    max-width: 600px; /* antes estaba en style */
+}
+
+    #CarouselPodas img {
+        object-fit: cover;
+        width: 100%; /* opcional si querés reemplazar w-100 */
+        display: block; /* opcional si reemplazas d-block */
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        transition: opacity 0.5s ease;
+    }
+
+.img-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* muestra todo el video sin recortarlo */
+    background-color: black; /* rellena los bordes sobrantes */
+    display: block;
+    border-radius: 0.5rem; /* igual que las imágenes */
+}
+
+.img-container {
+    width: 100%;
+    aspect-ratio: 1/1; /* cuadrado perfecto */
+    border: 1px solid var(--marron-terroso); /* grosor y color del borde */
+    border-radius: 0.5rem; /* redondeo opcional */
+    overflow: hidden;
+}
+
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+        /* Efecto hover */
+        .card:hover, .img-container img:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+
+
+.card {
+    border: 1px solid var(--marron-terroso); /* grosor y color del borde */
+    border-radius: 0.5rem; /* redondeo opcional */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, all 0.3s ease;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+    .card:hover {
+        box-shadow: var(--shadow-hover);
+    }
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    text-align:start;
+    padding: 1rem; /* espaciado uniforme */
+    color: var(--negro-suave); /* texto por defecto */
+}
+
+
+/* -------------------
+   RESPONSIVE
+------------------- */
+    @media (max-width: 576px) {
+        .whatsapp-wrapper {
+            padding: 0.5rem 1rem;
+        }
+
+        .whatsapp-text {
+            font-size: 0.85rem;
+        }
+
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+@media (max-width: 768px) {
+
+
+:root {
+    /* Puedes ajustar colores en móvil si es necesario */
+    --verde-oscuro: #1E3A2A; /* Verde más oscuro para mejor contraste */
+}
+   
+.navbar .nav-link {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+#Inicio {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+}
+
+.container {
+    padding-top: 80px;
+}
+
+}
+
+/* -------------------
+   FOOTER
+------------------- */
+.footer {
+    background-color: var(--verde-oscuro);
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--verde-medio);
+}
+
