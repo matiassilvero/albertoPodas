@@ -298,8 +298,7 @@ body {
     }
 
 @media (max-width: 768px) {
-
-
+    
 :root {
     /* Puedes ajustar colores en móvil si es necesario */
     --verde-oscuro: #1E3A2A; /* Verde más oscuro para mejor contraste */
