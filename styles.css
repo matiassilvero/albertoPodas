@@ -311,7 +311,7 @@ body {
 
 #Inicio {
     min-height: 60vh;
-    padding: 6rem 1rem 2rem 1rem; /* más espacio arriba para que no lo tape la navbar */
+    padding: 10rem 1rem 2rem 1rem; /* aún más espacio arriba */
 }
 
 .container {
