@@ -198,6 +198,14 @@ body {
     padding: 3rem 0; /* opcional, para espacio vertical*/
 }
 
+#Urgencias {
+    text-align: center;
+    background-color: var(--musgo);
+    width: 100%;
+    color: var(--blanco-puro); /*  para que el texto contraste */
+    padding: 3rem 0; /* opcional, para espacio vertical*/
+}
+
 #NosotrosyContacto{
     scroll-margin-top: 980px; /* ajusta según la altura de tu navbar */
 }
@@ -274,10 +282,25 @@ body {
 
 .card-body {
     text-align:start;
+    /* font-family: monserrat; */
     padding: 1rem; /* espaciado uniforme */
     color: var(--negro-suave); /* texto por defecto */
 }
 
+/* -------------------
+   FOOTER
+------------------- */
+.footer {
+    background-color: var(--verde-oscuro);
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--verde-medio);
+}
 
 /* -------------------
    RESPONSIVE
@@ -320,18 +343,4 @@ body {
 
 }
 
-/* -------------------
-   FOOTER
-------------------- */
-.footer {
-    background-color: var(--verde-oscuro);
-}
-
-.footer a {
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: var(--verde-medio);
-}
 
