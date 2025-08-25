@@ -56,7 +56,8 @@
 </section>
 
 <!-- Section 2: Carrousel + Texto -->
-<section class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-around my-3 my-md-5 align-items-center">
+    <section class=" d-flex flex-column flex-md-row justify-content-center justify-content-md-around my-3 my-md-5 align-items-center"> 
+
     <!-- Carrusel -->
     <div id="CarouselPodas" class="carousel" data-bs-ride="carousel" data-bs-interval="5000" >
         <div class="carousel-inner">
@@ -79,38 +80,87 @@
     </div>
 
     <!-- Texto -->
-    <div id="TextoCarrousel">
-        <h3>Trabajos en altura</h3>
-        <p>Contamos con equipamiento especializado para podas seguras y eficientes. Nuestro equipo trabaja con responsabilidad y compromiso en cada proyecto.</p>
-        <p>Realizamos inspecciones previas para asesorarte mejor y garantizar los mejores resultados.</p>
+    <div id="TextoCarousel">
+        <div class="card m-2">
+            <div class="card-body text-center">
+                <h3 class="card-title">Trabajos en altura</h3>
+              <p>Contamos con equipamiento especializado para podas seguras y eficientes. Nuestro equipo trabaja con responsabilidad y compromiso en cada proyecto.</p>
+              <p>Realizamos inspecciones previas para asesorarte mejor y garantizar los mejores resultados.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Section 3: Servicio de urgencias -->
-<section id="Urgencias" class="container my-3 my-md-5">
-    <h2 class="mb-4">Servicio de urgencias</h2>
-    <p>Cuidamos tus árboles y tu tranquilidad: además de servicios de poda profesional, 
-        ofrecemos atención rápida ante urgencias.</p>
-    <div class="row g-3">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="img-container">
-                <img src="Imagenes/41.jpeg" alt="Trabajo 2" class="img-fluid rounded">
-            </div>
+<!-- Section 2: Servicio de urgencias -->
+<section id="Urgencias" class="my-3 my-md-5">
+    
+    <!-- Mobile con zig-zag -->
+    <div class="row d-md-none">
+      
+      <!-- Imagen arriba -->
+      <div class="col-12 order-1">
+        <div class="img-urgencias">
+          <img src="Imagenes/42.jpeg" class="img-fluid">
         </div>
-    <div class="col-12 col-md-6 col-lg-4">
-            <div class="img-container">
-                <img src="Imagenes/42.jpeg" alt="Trabajo 2" class="img-fluid rounded">
-            </div>
+      </div>
+      
+      <!-- Texto en card -->
+      <div class="col-12 order-2">
+        <div class="card card-urgencias">
+          <div class="card-body text-center">
+            <h3 class="card-title">
+              Servicio de <span class="urgencias">urgencias</span>
+            </h3>
+            <p>
+              Cuidamos tus árboles y tu tranquilidad: además de servicios de poda profesional, 
+              ofrecemos atención rápida ante urgencias.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Imagen abajo -->
+      <div class="col-12 order-3">
+        <div class="img-urgencias">
+          <img src="Imagenes/43.jpeg" class="img-fluid">
+        </div>
+      </div>
+  
     </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="img-container">
-                <img src="Imagenes/43.jpeg" alt="Trabajo 3" class="img-fluid rounded">
-            </div>
-        </div>
+  </section>
+  
+  
+  <!-- Desktop: imágenes en fila + texto debajo -->
+  <div class="row d-none d-md-flex">
+    <div class="col-md-6">
+        <div class="img-urgencias">
+            <img src="Imagenes/42.jpeg" class="img-fluid ">
+      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="img-urgencias">
+            <img src="Imagenes/43.jpeg" class="img-fluid ">
+      </div>
+    </div>
+    
+    <div class="card mt-3 card-urgencias">
+        <div class=" text-center">
+            <h3 class="card-title">
+                Servicio de <span class="urgencias">urgencias</span>
+            </h3>
+                <p>
+                 Cuidamos tus árboles y tu tranquilidad: además de servicios de poda profesional, 
+                 ofrecemos atención rápida ante urgencias.
+                </p>
+         </div>
+    </div>
+  </div>
+  
+
 </section>
 
-  <!-- Section 4: Servicios y Cobertura-->
-<section id="ServiciosyCobertura" class="container my-3 my-md-5">
+  <!-- Section 3: Servicios y Cobertura-->
+<section id="ServiciosyCobertura" class=" my-3 my-md-5">
     <div class="row g-3">
         <!-- Servicios -->
         <div class="col-12 col-sm-6">
@@ -140,11 +190,11 @@
         <!-- Cobertura -->
         <div class="col-12 col-sm-6">
             <div class="card h-100">
-                <div class="card-body">
+                <div class="card-cobertura">
                     <h4 class="card-title"><strong>Cobertura:</strong></h4>
                     <div class="row">
-                        <div class="col-6">
-                            <ul class="list-unstyled">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <ul class="list-unstyled ">
                                 <li><i class="bi bi-geo-alt-fill text-danger me-2"></i>Escobar</li>
                                 <li><i class="bi bi-geo-alt-fill text-danger me-2"></i>José C. Paz</li>
                                 <li><i class="bi bi-geo-alt-fill text-danger me-2"></i>Nordelta</li>
@@ -157,9 +207,12 @@
                                 <li><i class="bi bi-geo-alt-fill text-danger me-2"></i>Vicente Lopez</li>
                             </ul>
                         </div>
-                        <p class="text-center text-success fst-italic mt-2 fs-4 fw-bold">
-                            ¡Consultanos por tu localidad!
-                        </p>
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <p class="text-success fst-italic fw-bold" style="margin-bottom: 7rem; font-size: 2rem; text-align: center;">
+                                ¡Consultanos por tu localidad!
+                            </p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -167,7 +220,7 @@
     </div>
 </section>
 
-  <!-- Section 5: Galería de trabajos -->
+  <!-- Section 4: Galería de trabajos -->
 <section id="Trabajos" class="container my-3 my-md-5">
     <h2 class="mb-4">Algunos de nuestros trabajos</h2>
     <div class="row g-3">
@@ -180,7 +233,6 @@
       <div class="img-container">
         <video controls class="img-fluid rounded">
           <source src="Imagenes/video.mp4" type="video/mp4">
-          Tu navegador no soporta video en HTML5.
         </video>
       </div>
     </div>
@@ -207,7 +259,7 @@
     </div>
 </section>
 
-    <!-- Section 6: Texto libre -->
+    <!-- Section 5: Texto libre -->
 <section id="TextoLibre" class="container my-3 my-md-5">
     <div class="container-fluid">
         <h2>Confianza y profesionalismo</h2>
@@ -216,7 +268,7 @@
     </div>
 </section>
 
-<!-- Section 7: Nosotros y Contacto -->
+<!-- Section 6: Nosotros y Contacto -->
 <section id="NosotrosYContacto" class="d-flex flex-column flex-md-row justify-content-center my-3 my-md-5">
     <div class="card w-100 m-2">
         <div class="card-body text-center">
@@ -226,7 +278,7 @@
     </div>
     <div class="card w-100 m-2">
         <div class="card-body text-center">
-            <h5 class="card-title">Contactanos</h5>
+            <h5 class="card-title">¡Contactanos!</h5>
             <p>Teléfono: +54 9 11 4495-8975 (Alberto)</p>
             <p>Teléfono: +54 9 11 5339-6248 (Derly)</p>
         </div>

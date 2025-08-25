@@ -15,19 +15,19 @@
     --beige: #F5F0E6; /* Fondos claros */
     --marron-terroso: #6B4E3B; /* Bordes, detalles */
     --blanco-roto: #FFFDFA; /* Fondos puros */
+    --blanco-puro: #FFFFFF; /* Contraste máximo */
     --negro: #000000; /* Negro intenso para texto */
     --negro-oscuro: #111111; /* Casi negro, menos agresivo que #000000 */
+    --negro-suave: #333333; /* Texto principal oscuro */
 
     /* Colores funcionales */
     --error: #b32121; /* Rojo para errores */
     --whatsapp: #25D366; /* Verde WhatsApp */
-    --negro-suave: #333333; /* Texto principal oscuro */
 
     /* Colores de contraste y acento */
     --amarillo-mostaza: #FFC857; /* Botones, detalles */
     --naranja-suave: #FF9F80; /* Hover o elementos destacados */
     --rosa-pale: #FADBD8; /* Detalles suaves, overlays */
-    --blanco-puro: #FFFFFF; /* Contraste máximo */
 
     --shadow-card: 0 10px 20px rgba(0,0,0,0.1);
     --shadow-hover: 0 15px 25px rgba(0,0,0,0.15);
@@ -40,14 +40,14 @@ html, body {
 }
 
 html {
-    scroll-padding-top: 80px; /* ajusta según el alto de tu navbar */
+    scroll-padding-top: 80px; /* ajustar según el alto de navbar */
     scroll-behavior: smooth;
     min-height: 100vh;
 }
 
 body {
     margin: 0; /* elimina márgenes por defecto */
-    padding-top: 0; /* o un valor muy pequeño como 5px si querés un poquito de espacio */
+    padding-top: 0; 
 }
 
 /* -------------------
@@ -69,7 +69,7 @@ body {
 }
 
 /* -------------------
-   BOTON MODERNO DE WHATSAPP
+   BOTON DE WHATSAPP
 ------------------- */
 
 .whatsapp-float {
@@ -180,14 +180,38 @@ body {
     text-align: center;
     background-color: var(--musgo);
     color: var(--blanco-puro);
+    font-style: italic;
+
 }
 
-#TextoCarrousel {
+#TextoCarousel {
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0.5rem; /* equivale a m-2 de Bootstrap */
     width: 100%;
     color: var(--blanco-puro);
+}
+.card-urgencias .card-body,
+.card-urgencias .card-title,
+.card-urgencias p {
+    color: white ;
+}
+
+#Urgencias {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    text-align: center; /* centra texto dentro de la tarjeta */
+    background-color: var(--musgo);
+    width: 80%; /* ancho deseado */
+    margin: 0 auto; /* centra la sección en la pantalla */
+    color: var(--blanco-puro);
+    padding: 3rem 0;
+}
+
+
+
+#NosotrosyContacto{
+    scroll-margin-top: 980px; /* ajusta según la altura de tu navbar */
 }
 
 #TextoLibre {
@@ -198,38 +222,44 @@ body {
     padding: 3rem 0; /* opcional, para espacio vertical*/
 }
 
-#Urgencias {
-    text-align: center;
-    background-color: var(--musgo);
-    width: 100%;
-    color: var(--blanco-puro); /*  para que el texto contraste */
-    padding: 3rem 0; /* opcional, para espacio vertical*/
-}
-
-#NosotrosyContacto{
-    scroll-margin-top: 980px; /* ajusta según la altura de tu navbar */
-}
-
-
 /* -------------------
    IMAGENES, VIDEOS Y CARDS
 ------------------- */
 
 #CarouselPodas {
-    width: 100%; /* reemplaza w-100 */
+    width: 60%; /* reemplaza w-100 */
     margin: 0.5rem; /* reemplaza m-2 */
-    max-width: 600px; /* antes estaba en style */
+    border-radius: 0.5rem; 
+    /*border: 1px solid var(--marron-terroso);*/ /* grosor y color del borde */
 }
 
-    #CarouselPodas img {
-        object-fit: cover;
-        width: 100%; /* opcional si querés reemplazar w-100 */
-        display: block; /* opcional si reemplazas d-block */
-        height: auto;
-        max-height: 300px;
-        object-fit: cover;
-        transition: opacity 0.5s ease;
-    }
+#CarouselPodas img {
+    max-width: none;   /* quita límites */
+    height: 400px;     /* ajusta la altura deseada */
+    object-fit: cover; /* recorta manteniendo proporciones */
+    display: block;
+    transition: all 2s ease; /* transiciona todos los cambios */
+    border-radius: 0.5rem; /* redondeo opcional */
+}
+
+.carousel-item {
+    transition: transform 2s ease, opacity 1s ease; /* duración más larga */
+}
+
+.img-urgencias {
+    width: 80%;                /* ocupa 90% del contenedor */
+    max-width: 1000px;           /* opcional, para no superar cierto tamaño */
+    aspect-ratio: 1/1;          /* cuadrado perfecto */
+    border: 1px solid var(--marron-terroso);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    display: block;             /* necesario para centrar con margin */
+    margin: 0 auto;             /* centra horizontalmente */
+    transition: transform 0.3s ease; /* para efecto hover suave */
+}
+
+/* Efecto hover: agrandar ligeramente */
 
 .img-container video {
     width: 100%;
@@ -246,6 +276,7 @@ body {
     border: 1px solid var(--marron-terroso); /* grosor y color del borde */
     border-radius: 0.5rem; /* redondeo opcional */
     overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
     .img-container img {
@@ -256,7 +287,7 @@ body {
     }
 
         /* Efecto hover */
-        .card:hover, .img-container img:hover {
+        .card:hover, .img-container img:hover, .img-urgencias:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 15px 25px rgba(0,0,0,0.15);
         }
@@ -271,6 +302,17 @@ body {
     box-shadow: var(--shadow-card);
 }
 
+.card-urgencias{
+    background-color: black;
+    color: white;
+    padding: 1rem; /* espaciado uniforme */
+
+    
+}
+
+.urgencias{
+color: red;
+}
     .card:hover {
         box-shadow: var(--shadow-hover);
     }
@@ -280,6 +322,11 @@ body {
     object-fit: cover;
 }
 
+.card-title {
+    font-style: italic;
+    text-align: center;
+}
+
 .card-body {
     text-align:start;
     /* font-family: monserrat; */
@@ -287,6 +334,17 @@ body {
     color: var(--negro-suave); /* texto por defecto */
 }
 
+.card-cobertura{
+    text-align:start;
+    /* font-family: monserrat; */
+    padding: 1rem; /* espaciado uniforme */
+    color: var(--negro-suave); /* texto por defecto */
+}
+.card-cobertura .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* ajusta al contenido y no estira columnas */
+}
 /* -------------------
    FOOTER
 ------------------- */
@@ -321,26 +379,79 @@ body {
     }
 
 @media (max-width: 768px) {
-    
+
 :root {
     /* Puedes ajustar colores en móvil si es necesario */
     --verde-oscuro: #1E3A2A; /* Verde más oscuro para mejor contraste */
 }
    
+.img-urgencias {
+    width: 100%;
+    height: auto; /* que se ajuste al contenido */
+    aspect-ratio: auto; 
+    object-fit: contain; /* muestra la imagen completa */
+}
+
+.card-urgencias {
+    background-color: black;
+    color: white !important;
+    margin: 0rem 0rem 0rem 0rem; 
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+.card-cobertura .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem; /* menos espacio debajo */
+}
+
+.card-cobertura .text-success {
+    margin-top: 0.5rem; /* reduce margen superior */
+    font-size: 1.8rem;
+}
+
+.card-cobertura .card-body {
+    padding: 0rem 0rem 0rem 0rem; 
+    margin: 0rem 0rem 0rem 0rem;
+
+}
 .navbar .nav-link {
     margin-left: 0;
     margin-top: 10px;
 }
 
 #Inicio {
+    font-size: 0.001rem; 
     min-height: 60vh;
     padding: 10rem 1rem 2rem 1rem; /* aún más espacio arriba */
+}
+
+
+#Urgencias{
+    padding: 0rem 0rem 0rem 0rem; 
+}
+
+#CarouselPodas{
+    padding: 0rem 0rem 0rem 0rem; 
+    margin: 0rem 0rem -0.9rem 0rem;
+}
+
+#ServiciosyCobertura{
+    padding: 0rem 1rem 0rem 1rem; 
+    
+}
+
+#Trabajos{
+    padding: 0rem rem 0rem 1rem; 
+
 }
 
 .container {
     padding-top: 80px;
 }
 
-}
 
+
+}
 
