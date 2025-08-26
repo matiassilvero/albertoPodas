@@ -170,7 +170,7 @@ body {
 
 
 #ServiciosyCobertura {
-    scroll-margin-top: 80px; /* ajusta según la altura de tu navbar */
+    scroll-margin-top: 90px; /* ajusta según la altura de tu navbar */
     background-color: var(--musgo); /* verde musgo */
     padding: 2rem; /* opcional, para que no queden pegadas las cards */
 }
@@ -181,7 +181,6 @@ body {
     background-color: var(--musgo);
     color: var(--blanco-puro);
     font-style: italic;
-
 }
 
 #TextoCarousel {
@@ -205,7 +204,6 @@ body {
     width: 80%; /* ancho deseado */
     margin: 0 auto; /* centra la sección en la pantalla */
     color: var(--blanco-puro);
-    padding: 3rem 0;
 }
 
 
@@ -236,6 +234,7 @@ body {
 #CarouselPodas img {
     max-width: none;   /* quita límites */
     height: 400px;     /* ajusta la altura deseada */
+    width: 600px;
     object-fit: cover; /* recorta manteniendo proporciones */
     display: block;
     transition: all 2s ease; /* transiciona todos los cambios */
@@ -247,7 +246,7 @@ body {
 }
 
 .img-urgencias {
-    width: 80%;                /* ocupa 90% del contenedor */
+    width: 90%;                /* ocupa 90% del contenedor */
     max-width: 1000px;           /* opcional, para no superar cierto tamaño */
     aspect-ratio: 1/1;          /* cuadrado perfecto */
     border: 1px solid var(--marron-terroso);
@@ -306,6 +305,8 @@ body {
     background-color: black;
     color: white;
     padding: 1rem; /* espaciado uniforme */
+    max-width: 1200px; /* ancho máximo */
+    margin: 0 auto;   /* la centra horizontalmente */
 
     
 }
@@ -313,6 +314,7 @@ body {
 .urgencias{
 color: red;
 }
+
     .card:hover {
         box-shadow: var(--shadow-hover);
     }
@@ -386,7 +388,7 @@ color: red;
 }
    
 .img-urgencias {
-    width: 100%;
+    width: 90%;
     height: auto; /* que se ajuste al contenido */
     aspect-ratio: auto; 
     object-fit: contain; /* muestra la imagen completa */
@@ -399,23 +401,16 @@ color: red;
     padding: 0rem 0rem 0rem 0rem;
 }
 
-.card-cobertura .col-6 {
+  .card-cobertura .row > div {
     flex: 0 0 100%;
     max-width: 100%;
     text-align: center;
-    margin-bottom: 0.5rem; /* menos espacio debajo */
-}
+  }
 
-.card-cobertura .text-success {
-    margin-top: 0.5rem; /* reduce margen superior */
-    font-size: 1.8rem;
-}
-
-.card-cobertura .card-body {
-    padding: 0rem 0rem 0rem 0rem; 
-    margin: 0rem 0rem 0rem 0rem;
-
-}
+  .card-cobertura p {
+    margin-bottom: 1rem !important;
+    font-size: 1.2rem;
+  }
 .navbar .nav-link {
     margin-left: 0;
     margin-top: 10px;
@@ -429,7 +424,8 @@ color: red;
 
 
 #Urgencias{
-    padding: 0rem 0rem 0rem 0rem; 
+    padding: 0; 
+    margin-bottom: 0;
 }
 
 #CarouselPodas{
@@ -443,9 +439,12 @@ color: red;
 }
 
 #Trabajos{
-    padding: 0rem rem 0rem 1rem; 
+    padding: 0rem 0rem 0rem 1rem; 
+    margin: -3rem 5rem 0rem 0rem;
 
 }
+
+
 
 .container {
     padding-top: 80px;
